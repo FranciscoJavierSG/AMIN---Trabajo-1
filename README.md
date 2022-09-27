@@ -1,4 +1,4 @@
-# Algoritmos Metaheurísticos Inspirados en la Naturaleza!
+# Algoritmos Metaheurísticos Inspirados en la Naturaleza
 
 ## Trabajo de Programación 1
 
