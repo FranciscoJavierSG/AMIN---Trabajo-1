@@ -13,5 +13,5 @@ Sin embargo, si se desea ejecutar mediante consola, puede hacer lo siguiente:
 2. Escribir en consola "py reinas.py".
 
 Para garantizar un correcto uso del programa, siga las instrucciones que el mismo solicita.
-Es decir, cuando el programa solicite que usted ingrese valores numéricos por teclado, haga caso, no sea tonto.
+Es decir, cuando el programa solicite que usted ingrese valores numéricos por teclado, haga caso, no le busque la quinta pata al gato.
 
