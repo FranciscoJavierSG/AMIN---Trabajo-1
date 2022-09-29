@@ -84,7 +84,7 @@ if __name__ == "__main__":
     semilla(rand_seed)
 
     tamano_tablero = int(input("Ingrese el tamano del tablero: ")) #digamos que N = 8
-    maxFitness = (tamano_tablero*(tamano_tablero-1))/2  # 8*7/2 = 28
+    maxFitness = (tamano_tablero*(tamano_tablero-1))/2
 
     prob_mut = float(input("Ingrese la probabilidad de mutacion: "))
 

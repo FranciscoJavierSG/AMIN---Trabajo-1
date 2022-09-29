@@ -15,7 +15,6 @@ Sin embargo, si se desea ejecutar mediante consola, puede hacer lo siguiente:
 Cuando el programa solicite que ingrese valores, considere lo siguiente:
 - **Semilla** :  Valor entero.
 - **Tamaño del tablero**: Dimensiones del tablero, en caso de ser un tablero de 8x8 se debe ingresar 8.
-<!-- - **Tamaño de la población**: Entero que representa la cantidad de individuos a crear y replicar. -->
 - **Probabilidad de cruza**: Valor entero entre 0 y 100, que representa la probabilidad de que dos individuos se crucen y generen descendencia.
 - **Probabilidad de mutación**: Valor entre 0 y 100 que representa la probabilidad de que la descendencia genere una mutación de sus genes.
 - **Número de iteraciones**: Número entero que representa la cantidad de iteraciones a realizar, el programa se ejecutará hasta encontrar esta limitante o hasta encontrar un individuo que tenga el fitness máximo.
