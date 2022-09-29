@@ -1,7 +1,7 @@
 import random
 
 def cromosoma_random(size): #Haciendo cromosomas aleatorios 
-    return [ random.randint(1, tamano_tablero) for _ in range(tamano_tablero) ]
+    return [random.randint(1, tamano_tablero) for _ in range(tamano_tablero)]
 
 #Función que devuelve el fitness de una composición de reinas dada por un cromosoma
 def fitness(cromosoma):
@@ -38,19 +38,18 @@ def seleccion_random(poblacion, probabilidades):
         if u + w >= rand:
             return c
         u += w
-    assert False, "No deberia llegar hasta aquí. Si llega, hay un error."
         
 def cruza(x, y): #Cruza entre dos cromosomas
     n = len(x)
     c = random.randint(0, n - 1)
     return x[0:c] + y[c:n]
 
-def mutar(x):  #randomly changing the value of a random index of a chromosome
-    n = len(x)
-    c = random.randint(0, n - 1)
-    m = random.randint(1, n)
-    x[c] = m
-    return x
+def mutar(cromosoma_antiguo):  #Muta un cromosoma aleatoriamente
+    n = len(cromosoma_antiguo)
+    nuevo_cromosoma = random.randint(0, n - 1)
+    nuevo_index_random = random.randint(1, n)
+    cromosoma_antiguo[nuevo_cromosoma] = nuevo_index_random
+    return cromosoma_antiguo
 
 def seleccion_cromosomas(poblacion, fitness, prob_mut, prob_cruza):
     probabilidad_mutacion = prob_mut
@@ -68,15 +67,22 @@ def seleccion_cromosomas(poblacion, fitness, prob_mut, prob_cruza):
             hijo = mutar(hijo) 
         
         imprimir_cromosoma(hijo)
-        nueva_poblacion.append(hijo)
-        if fitness(hijo) == maxFitness: break 
+        nueva_poblacion.append(hijo) #Se agrega este hijo al vector creado anteriormente
+        if fitness(hijo) == maxFitness: break #Si el fitness del hijo es igual al fitness máximo, termina, pues encontró una posible solución
     return nueva_poblacion
 
 def imprimir_cromosoma(chrom):
     print("Cromosoma = {},  Fitness = {}"
         .format(str(chrom), fitness(chrom)))
 
+def semilla(seed):
+    random.seed(seed)
+
 if __name__ == "__main__":
+    
+    rand_seed = int(input("Ingrese la semilla: "))
+    semilla(rand_seed)
+
     tamano_tablero = int(input("Ingrese el tamano del tablero: ")) #digamos que N = 8
     maxFitness = (tamano_tablero*(tamano_tablero-1))/2  # 8*7/2 = 28
 
