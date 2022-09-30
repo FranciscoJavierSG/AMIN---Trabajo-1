@@ -1,4 +1,5 @@
 import random
+import sys
 
 def cromosoma_random(size): #Haciendo cromosomas aleatorios 
     return [random.randint(1, tamano_tablero) for _ in range(tamano_tablero)]
@@ -80,38 +81,47 @@ def semilla(seed):
 
 if __name__ == "__main__":
     
-    rand_seed = int(input("Ingrese la semilla: "))
-    semilla(rand_seed)
+    user_seed = int(sys.argv[1])
+    semilla(user_seed)
+    print("Valor de la semilla: ", user_seed)
 
-    tamano_tablero = int(input("Ingrese el tamano del tablero: ")) #digamos que N = 8
-    maxFitness = (tamano_tablero*(tamano_tablero-1))/2
+    tamano_tablero = int(sys.argv[2])
+    maxFitness = (tamano_tablero*(tamano_tablero-1))/2 #Esta formula nace de la formula de sumatoria para (n-1)
+    print("Tamaño del tablero: ", tamano_tablero)
 
-    prob_mut = float(input("Ingrese la probabilidad de mutacion: "))
+    tamano_poblacion = int(sys.argv[3])
+    print("Tamaño de la población: ", tamano_poblacion)
 
-    prob_cruza = float(input("Ingrese la probabilidad de cruza: "))
+    prob_mut = float(sys.argv[4])
+    print("Probabilidad de mutación: ", prob_mut)
 
-    itMax = int(input("Ingrese la cantidad maxima de iteraciones: "))
+    prob_cruza = float(sys.argv[5])
+    print("Probabilidad de cruza: ", prob_cruza)
+
+    itMax = int(sys.argv[6])
+    print("Cantidad máxima de iteraciones: ", itMax)
     itActual = 1
 
-    poblacion = [cromosoma_random(tamano_tablero) for _ in range(10)]
+    poblacion = [cromosoma_random(tamano_tablero) for _ in range(tamano_poblacion)]
 
     generacion = 1
 
     while (not maxFitness in [fitness(chrom) for chrom in poblacion]) and (itActual != itMax):
-        print("Generacion = {}".format(generacion))
+        print("Generación = {}".format(generacion))
         poblacion = seleccion_cromosomas(poblacion, fitness, prob_mut, prob_cruza)
         print("")
-        print("Fitness Maximo = {}".format(max([fitness(n) for n in poblacion])))
+        print("Fitness Máximo = {}".format(max([fitness(n) for n in poblacion])))
+        print("")
         generacion += 1
         itActual += 1
 
     if(itActual != itMax):
         chrom_fin = []
-        print("Resuelto en la generacion = {}!".format(generacion-1))
+        print("Resuelto en la generación = {}!".format(generacion-1))
         for chrom in poblacion:
             if fitness(chrom) == maxFitness:
                 print("")
-                print("La solucion encontrada es: ")
+                print("La solución encontrada es: ")
                 chrom_fin = chrom
                 imprimir_cromosoma(chrom)
                 
@@ -133,7 +143,7 @@ if __name__ == "__main__":
         print()
         print_tablero(tablero)
     else:
-        print("Se llego a la iteracion maxima sin encontrar una solucion optima.")
+        print("Se llegó a la iteración máxima sin encontrar una solución óptima.")
 
     print()
-    input('Presiona cualquier cosa para salir.')
+    input('Presione cualquier cosa para salir.')

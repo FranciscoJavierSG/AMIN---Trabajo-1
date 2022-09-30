@@ -1,7 +1,7 @@
 # Algoritmos Metaheurísticos Inspirados en la Naturaleza
 *Autores: José Avilán (javilan@ing.ucsc.cl) y Francisco Salazar (fsalazarg@ing.ucsc.cl)*
 
-El programa tiene como objetivo encontrar una distribución de n reinas en un tablero de nxm (valores ingresados por el usuario), de tal modo que éstas no colisionen entre sí.
+El programa tiene como objetivo encontrar una distribución de n reinas en un tablero de nxn, de tal modo que éstas no colisionen entre sí.
 
 ## Instalación
 Antes de ejecutar el programa, es necesario:
@@ -16,7 +16,7 @@ py reinas.py <Semilla><Tamaño_Tablero><Tamaño_Pob><Prob_Cruza><Prob_Mutación>
 ```
 
 Donde:
-- **Semilla** :  Número entero positivo que representa el valor de la semilla.
+- **Semilla**: Número entero positivo que representa el valor de la semilla.
 - **Tamaño_Tablero**: Dimensiones del tablero, expresadas en valores enteros positivos. Por ejemplo, en caso de querer un tablero de 8x8, se debe ingresar 8.
 - **Tamaño_Pob**: Valor entero positivo que representa la cantidad de cromosomas a crear y replicar.
 - **Prob_Cruza**: Valor decimal entre 0.0 y 1.0, que representa la probabilidad de que dos cromosomas se crucen y generen descendencia.
@@ -26,6 +26,6 @@ Donde:
 ## Ejemplo de Ejecución
 
 ```
-py reinas.py 0 8 8 0.99 1 20000
+py reinas.py 0 8 8 0.99 1 100000
 ```
 
