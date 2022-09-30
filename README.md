@@ -1,12 +1,12 @@
 # Algoritmos Metaheurísticos Inspirados en la Naturaleza
 *Autores: José Avilán (javilan@ing.ucsc.cl) y Francisco Salazar (fsalazarg@ing.ucsc.cl)*
 
-El programa tiene como objetivo encontrar una distribución de n reinas en un tablero de n~x~m (valores ingresados por el usuario), de tal modo que éstas no colisionen entre sí.
+El programa tiene como objetivo encontrar una distribución de n reinas en un tablero de nxm (valores ingresados por el usuario), de tal modo que éstas no colisionen entre sí.
 
 ## Instalación
 Antes de ejecutar el programa, es necesario:
 - Tener instalado Python 3.8.10 en su sistema.
-- Para descargar el programa, presione en el siguiente [enlace](https://github.com/FranciscoJavierSG/AMIN---Trabajo-1.git)
+- Para descargar el programa, presione en el siguiente [enlace](https://github.com/FranciscoJavierSG/AMIN---Trabajo-1.git).
 
 ## Ejecución 
 Para ejecutar el programa, basta con hacer doble clic en el archivo "reinas.py".
